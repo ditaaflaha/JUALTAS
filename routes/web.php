@@ -24,6 +24,7 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
+
 // Route controller
 Route::get('/rama', [RamaController::class, 'tampilkan']);
 Route::get('/contact', [HomeController::class, 'contact']);
@@ -43,4 +44,11 @@ Route::prefix('admin')->group(function () {
     Route::get('/users', function () {
         return 'Admin Users';
     });
+
+    Route::get('/tugaspublic', function () {
+        return view('tugaspublic');
+    });
+    
+Route::get('/destinasi', [\App\Http\Controllers\DestinasiControllers::class, 'index'])->name('destinasi');
+
 });

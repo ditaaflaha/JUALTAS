@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOME</title>
+    <script src="{{ asset('js/tailwindcss3.4.1.js') }}"></script>
     <style>
         html {
             margin: 0;
@@ -98,6 +100,7 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="navbar">
@@ -122,5 +125,11 @@
             </div>
         </div>
     </header>
+
+    <!-- Tailwind example section -->
+    <div class="bg-green-200 text-green-800 p-4 m-4 text-center rounded-xl">
+        Ini contoh implementasi Tailwind: margin, padding, dan background-color!
+    </div>
 </body>
+
 </html>
