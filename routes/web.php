@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ListBarangController;
+use App\Http\Controllers\ListProductController;
 use App\Http\Controllers\DitaController;
 use App\Http\Controllers\RamaController;
 
@@ -24,16 +24,11 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-
 // Route controller
 Route::get('/rama', [RamaController::class, 'tampilkan']);
 Route::get('/contact', [HomeController::class, 'contact']);
 Route::get('/listbarang/{id}/{nama}', [ListBarangController::class, 'tampilkan']);
-
-// Contoh route parameter
-Route::get('/user/{id}', function ($id) {
-    return 'User dengan ID ' . $id;
-});
+Route::get('/list_product', [ListProductController::class, 'tampilkan']); 
 
 // Prefix admin
 Route::prefix('admin')->group(function () {
@@ -49,6 +44,5 @@ Route::prefix('admin')->group(function () {
         return view('tugaspublic');
     });
     
-Route::get('/destinasi', [\App\Http\Controllers\DestinasiControllers::class, 'index'])->name('destinasi');
-
+    Route::get('/destinasi', [\App\Http\Controllers\DestinasiControllers::class, 'index'])->name('destinasi');
 });
