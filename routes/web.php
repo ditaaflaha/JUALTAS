@@ -8,8 +8,8 @@ use App\Http\Controllers\RamaController;
 
 // Halaman statis
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/home', function () {
-    return view('home');
+Route::get('/', function () {
+    return view('pages.home');
 });
 Route::get('/product', function () {
     return view('product');
@@ -45,4 +45,7 @@ Route::prefix('admin')->group(function () {
     });
     
     Route::get('/destinasi', [\App\Http\Controllers\DestinasiControllers::class, 'index'])->name('destinasi');
+    
+    
+
 });
